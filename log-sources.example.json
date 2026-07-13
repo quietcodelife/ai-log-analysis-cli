@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Nginx Access Log",
+    "path": "/var/log/nginx/access.log",
+    "description": "Ruch HTTP do serwera WWW"
+  },
+  {
+    "id": 2,
+    "name": "Nginx Error Log",
+    "path": "/var/log/nginx/error.log",
+    "description": "Bledy i ostrzezenia serwera WWW"
+  },
+  {
+    "id": 3,
+    "name": "Systemd Journal Export",
+    "path": "/var/log/syslog",
+    "description": "Glowne logi systemowe"
+  },
+  {
+    "id": 4,
+    "name": "Auth Log",
+    "path": "/var/log/auth.log",
+    "description": "Logowania, sudo i proby dostepu"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Secure Log",
+    "path": "/var/log/secure",
+    "description": "Logowania, sudo, SSH i proby dostepu"
+  },
+  {
+    "id": 2,
+    "name": "Messages",
+    "path": "/var/log/messages",
+    "description": "Glowne logi systemowe"
+  },
+  {
+    "id": 3,
+    "name": "Cron Log",
+    "path": "/var/log/cron",
+    "description": "Zadania cykliczne cron"
+  },
+  {
+    "id": 4,
+    "name": "Nginx Access Log",
+    "path": "/var/log/nginx/access.log",
+    "description": "Ruch HTTP do serwera WWW"
+  },
+  {
+    "id": 5,
+    "name": "Nginx Error Log",
+    "path": "/var/log/nginx/error.log",
+    "description": "Bledy i ostrzezenia serwera Nginx"
+  },
+  {
+    "id": 6,
+    "name": "Apache Access Log",
+    "path": "/var/log/httpd/access_log",
+    "description": "Ruch HTTP do serwera Apache"
+  },
+  {
+    "id": 7,
+    "name": "Apache Error Log",
+    "path": "/var/log/httpd/error_log",
+    "description": "Bledy i ostrzezenia Apache"
+  },
+  {
+    "id": 8,
+    "name": "Fail2Ban Log",
+    "path": "/var/log/fail2ban.log",
+    "description": "Blokady adresow IP i zdarzenia ochrony przed brute force"
+  }
+]

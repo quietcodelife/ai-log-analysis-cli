@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Auth Log",
+    "path": "/var/log/auth.log",
+    "description": "Logowania, sudo, SSH i proby dostepu"
+  },
+  {
+    "id": 2,
+    "name": "Syslog",
+    "path": "/var/log/syslog",
+    "description": "Glowne logi systemowe dla wielu dystrybucji Debian i Ubuntu"
+  },
+  {
+    "id": 3,
+    "name": "Messages",
+    "path": "/var/log/messages",
+    "description": "Glowne logi systemowe dla wielu dystrybucji RHEL, CentOS i AlmaLinux"
+  },
+  {
+    "id": 4,
+    "name": "Nginx Access Log",
+    "path": "/var/log/nginx/access.log",
+    "description": "Ruch HTTP do serwera WWW"
+  },
+  {
+    "id": 5,
+    "name": "Nginx Error Log",
+    "path": "/var/log/nginx/error.log",
+    "description": "Bledy i ostrzezenia serwera Nginx"
+  },
+  {
+    "id": 6,
+    "name": "Apache Access Log",
+    "path": "/var/log/apache2/access.log",
+    "description": "Ruch HTTP do serwera Apache na Debian i Ubuntu"
+  },
+  {
+    "id": 7,
+    "name": "Apache Error Log",
+    "path": "/var/log/apache2/error.log",
+    "description": "Bledy i ostrzezenia Apache na Debian i Ubuntu"
+  },
+  {
+    "id": 8,
+    "name": "Kernel Log",
+    "path": "/var/log/kern.log",
+    "description": "Logi jadra systemu Linux"
+  },
+  {
+    "id": 9,
+    "name": "Fail2Ban Log",
+    "path": "/var/log/fail2ban.log",
+    "description": "Blokady adresow IP i zdarzenia ochrony przed brute force"
+  }
+]
