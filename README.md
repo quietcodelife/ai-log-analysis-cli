@@ -15,6 +15,16 @@ CLI do analizy logow serwerowych Linux przy pomocy AI. Projekt laczy szybka loka
 - dwa jezyki interfejsu i raportu AI: `pl`, `en`
 - dziala na `Python 3` bez `Node.js`, `npm` i `Next.js`
 
+## Screenshots
+
+### Polish CLI
+
+![AI Log Analysis CLI - Polish](assets/screenshots/cli-pl.png)
+
+### English CLI
+
+![AI Log Analysis CLI - English](assets/screenshots/cli-en.png)
+
 ## Requirements
 
 - `Python 3`
@@ -111,6 +121,7 @@ Parametr `--lang` zmienia:
 - lokalne sekcje analityczne
 - prompt do AI
 - zapis raportu Markdown i JSON
+- opisy zrodel logow, jesli konfiguracja zawiera pola `name_pl` / `name_en` oraz `description_pl` / `description_en`
 
 ## Environment Variables
 
@@ -133,7 +144,6 @@ AI_LOG_LANG=pl
 
 - dodanie maskowania danych wrazliwych przed wysylka do AI
 - rozbudowa parserow dla kolejnych typow logow
-- pelne tlumaczenie przykladowych konfiguracji `log-sources*.json`
 - eksport raportu do dodatkowych formatow
 - gotowe integracje z cronem, systemd i SIEM
 

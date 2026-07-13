@@ -1,50 +1,82 @@
 [
   {
     "id": 1,
-    "name": "Secure Log",
-    "path": "/var/log/secure",
-    "description": "Logowania, sudo, SSH i proby dostepu"
+    "name": "Messages",
+    "name_pl": "Messages",
+    "name_en": "Messages",
+    "path": "/var/log/messages",
+    "description": "Glowne logi systemowe dla RHEL, CentOS i AlmaLinux",
+    "description_pl": "Glowne logi systemowe dla RHEL, CentOS i AlmaLinux",
+    "description_en": "Main system logs for RHEL, CentOS, and AlmaLinux"
   },
   {
     "id": 2,
-    "name": "Messages",
-    "path": "/var/log/messages",
-    "description": "Glowne logi systemowe"
+    "name": "Secure Log",
+    "name_pl": "Secure Log",
+    "name_en": "Secure Log",
+    "path": "/var/log/secure",
+    "description": "Logowania, sudo, SSH i proby dostepu",
+    "description_pl": "Logowania, sudo, SSH i proby dostepu",
+    "description_en": "Logins, sudo, SSH, and access attempts"
   },
   {
     "id": 3,
-    "name": "Cron Log",
-    "path": "/var/log/cron",
-    "description": "Zadania cykliczne cron"
+    "name": "Nginx Access Log",
+    "name_pl": "Nginx Access Log",
+    "name_en": "Nginx Access Log",
+    "path": "/var/log/nginx/access.log",
+    "description": "Ruch HTTP do serwera WWW",
+    "description_pl": "Ruch HTTP do serwera WWW",
+    "description_en": "HTTP traffic to the web server"
   },
   {
     "id": 4,
-    "name": "Nginx Access Log",
-    "path": "/var/log/nginx/access.log",
-    "description": "Ruch HTTP do serwera WWW"
+    "name": "Nginx Error Log",
+    "name_pl": "Nginx Error Log",
+    "name_en": "Nginx Error Log",
+    "path": "/var/log/nginx/error.log",
+    "description": "Bledy i ostrzezenia serwera Nginx",
+    "description_pl": "Bledy i ostrzezenia serwera Nginx",
+    "description_en": "Nginx server errors and warnings"
   },
   {
     "id": 5,
-    "name": "Nginx Error Log",
-    "path": "/var/log/nginx/error.log",
-    "description": "Bledy i ostrzezenia serwera Nginx"
+    "name": "Apache Access Log",
+    "name_pl": "Apache Access Log",
+    "name_en": "Apache Access Log",
+    "path": "/var/log/httpd/access_log",
+    "description": "Ruch HTTP do serwera Apache",
+    "description_pl": "Ruch HTTP do serwera Apache",
+    "description_en": "HTTP traffic to the Apache server"
   },
   {
     "id": 6,
-    "name": "Apache Access Log",
-    "path": "/var/log/httpd/access_log",
-    "description": "Ruch HTTP do serwera Apache"
+    "name": "Apache Error Log",
+    "name_pl": "Apache Error Log",
+    "name_en": "Apache Error Log",
+    "path": "/var/log/httpd/error_log",
+    "description": "Bledy i ostrzezenia Apache",
+    "description_pl": "Bledy i ostrzezenia Apache",
+    "description_en": "Apache errors and warnings"
   },
   {
     "id": 7,
-    "name": "Apache Error Log",
-    "path": "/var/log/httpd/error_log",
-    "description": "Bledy i ostrzezenia Apache"
+    "name": "Kernel Log",
+    "name_pl": "Kernel Log",
+    "name_en": "Kernel Log",
+    "path": "/var/log/kern.log",
+    "description": "Logi jadra systemu Linux",
+    "description_pl": "Logi jadra systemu Linux",
+    "description_en": "Linux kernel logs"
   },
   {
     "id": 8,
     "name": "Fail2Ban Log",
+    "name_pl": "Fail2Ban Log",
+    "name_en": "Fail2Ban Log",
     "path": "/var/log/fail2ban.log",
-    "description": "Blokady adresow IP i zdarzenia ochrony przed brute force"
+    "description": "Blokady adresow IP i zdarzenia ochrony przed brute force",
+    "description_pl": "Blokady adresow IP i zdarzenia ochrony przed brute force",
+    "description_en": "IP address bans and brute-force protection events"
   }
 ]

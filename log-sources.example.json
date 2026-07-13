@@ -2,25 +2,41 @@
   {
     "id": 1,
     "name": "Nginx Access Log",
+    "name_pl": "Nginx Access Log",
+    "name_en": "Nginx Access Log",
     "path": "/var/log/nginx/access.log",
-    "description": "Ruch HTTP do serwera WWW"
+    "description": "Ruch HTTP do serwera WWW",
+    "description_pl": "Ruch HTTP do serwera WWW",
+    "description_en": "HTTP traffic to the web server"
   },
   {
     "id": 2,
     "name": "Nginx Error Log",
+    "name_pl": "Nginx Error Log",
+    "name_en": "Nginx Error Log",
     "path": "/var/log/nginx/error.log",
-    "description": "Bledy i ostrzezenia serwera WWW"
+    "description": "Bledy i ostrzezenia serwera WWW",
+    "description_pl": "Bledy i ostrzezenia serwera WWW",
+    "description_en": "Web server errors and warnings"
   },
   {
     "id": 3,
     "name": "Systemd Journal Export",
+    "name_pl": "Systemd Journal Export",
+    "name_en": "Systemd Journal Export",
     "path": "/var/log/syslog",
-    "description": "Glowne logi systemowe"
+    "description": "Glowne logi systemowe",
+    "description_pl": "Glowne logi systemowe",
+    "description_en": "Main system logs"
   },
   {
     "id": 4,
     "name": "Auth Log",
+    "name_pl": "Auth Log",
+    "name_en": "Auth Log",
     "path": "/var/log/auth.log",
-    "description": "Logowania, sudo i proby dostepu"
+    "description": "Logowania, sudo i proby dostepu",
+    "description_pl": "Logowania, sudo i proby dostepu",
+    "description_en": "Logins, sudo, and access attempts"
   }
 ]
