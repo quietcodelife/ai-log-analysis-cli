@@ -19,11 +19,11 @@ CLI do analizy logow serwerowych Linux przy pomocy AI. Projekt laczy szybka loka
 
 ### Polish CLI
 
-![AI Log Analysis CLI - Polish](assets/screenshots/cli-pl.png)
+![AI Log Analysis CLI - Polish](assets/screenshots/cli-pl-sanitized.svg)
 
 ### English CLI
 
-![AI Log Analysis CLI - English](assets/screenshots/cli-en.png)
+![AI Log Analysis CLI - English](assets/screenshots/cli-en-sanitized.svg)
 
 ## Requirements
 
