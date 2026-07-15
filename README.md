@@ -13,7 +13,7 @@ CLI do analizy logow serwerowych Linux przy pomocy AI. Projekt laczy szybka loka
 - heurystyki bezpieczenstwa: brute force, skanowanie, timeouty, upstream, 4xx, 5xx
 - eksport wyniku do `Markdown` i `JSON`
 - dwa jezyki interfejsu i raportu AI: `pl`, `en`
-- dziala na `Python 3` bez `Node.js`, `npm` i `Next.js`
+- dziala na `Python 3`
 
 ## Screenshots
 
