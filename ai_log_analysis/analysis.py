@@ -17,6 +17,25 @@ from . import i18n
 from .i18n import tr
 from .ui import Style, print_status, terminal_width
 
+def load_env_file(path: Path | None = None) -> None:
+    env_path = path or Path.cwd() / ".env"
+    try:
+        content = env_path.read_text(encoding="utf-8")
+    except OSError:
+        return
+    for line in content.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+        key, _, value = stripped.partition("=")
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+load_env_file()
+
 DEFAULT_CONFIG_PATH = Path.cwd() / "log-sources.json"
 DEFAULT_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
 DEFAULT_MAX_BYTES = int(os.getenv("LOG_MAX_BYTES", "120000"))
@@ -505,6 +524,23 @@ def build_prompt(source: dict[str, Any], log_content: str, time_filter: TimeFilt
     ).strip()
 
 
+def extract_output_text(data: dict[str, Any]) -> str:
+    direct = data.get("output_text")
+    if isinstance(direct, str) and direct.strip():
+        return direct.strip()
+
+    parts: list[str] = []
+    for item in data.get("output") or []:
+        if not isinstance(item, dict) or item.get("type") != "message":
+            continue
+        for content in item.get("content") or []:
+            if isinstance(content, dict) and content.get("type") == "output_text":
+                text = content.get("text")
+                if isinstance(text, str) and text:
+                    parts.append(text)
+    return "\n".join(parts).strip()
+
+
 def analyze_with_openai(source: dict[str, Any], log_content: str, time_filter: TimeFilter) -> str:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
@@ -532,7 +568,7 @@ def analyze_with_openai(source: dict[str, Any], log_content: str, time_filter: T
     else:
         spinner.stop(tr("analysis_done"))
 
-    text = (data.get("output_text") or "").strip()
+    text = extract_output_text(data)
     if not text:
         raise RuntimeError(tr("api_empty_error"))
     return text

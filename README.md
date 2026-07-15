@@ -34,10 +34,11 @@ CLI do analizy logow serwerowych Linux przy pomocy AI. Projekt laczy szybka loka
 ## Quick Start
 
 ```bash
-cd /Users/stilldev/Workspace/Projekty-CyberSec/AI_Log_Analysis_CLI
+git clone https://github.com/<your-username>/AI_Log_Analysis_CLI.git
+cd AI_Log_Analysis_CLI
 cp .env.example .env
 cp log-sources.example.json log-sources.json
-export OPENAI_API_KEY="your_api_key"
+# uzupelnij OPENAI_API_KEY w pliku .env
 python3 main.py
 ```
 
@@ -124,6 +125,8 @@ Parametr `--lang` zmienia:
 - opisy zrodel logow, jesli konfiguracja zawiera pola `name_pl` / `name_en` oraz `description_pl` / `description_en`
 
 ## Environment Variables
+
+Program automatycznie wczytuje plik `.env` z katalogu roboczego. Zmienne ustawione juz w srodowisku (np. przez `export`) maja pierwszenstwo przed wartosciami z `.env`.
 
 - `OPENAI_API_KEY` - wymagany klucz API
 - `OPENAI_MODEL` - model, domyslnie `gpt-4.1-mini`
