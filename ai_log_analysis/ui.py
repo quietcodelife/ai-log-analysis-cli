@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import re
 import sys
+import unicodedata
 from shutil import get_terminal_size
 
 from .i18n import tr
@@ -191,8 +192,13 @@ def render_local_summary(summary: dict[str, object]) -> None:
     print(box_lines(lines, title=tr("local_summary_title"), color=Style.magenta))
 
 
+def normalize_for_match(text: str) -> str:
+    decomposed = unicodedata.normalize("NFKD", text.lower())
+    return "".join(char for char in decomposed if not unicodedata.combining(char))
+
+
 def classify_risk(line: str) -> tuple[str, str] | None:
-    lower = line.lower()
+    lower = normalize_for_match(line)
     if any(token in lower for token in ["wysok", "krytycz", "high", "critical"]):
         return (tr("risk_high"), Style.red)
     if any(token in lower for token in ["sredni", "umiark", "medium", "moderate"]):
@@ -203,7 +209,7 @@ def classify_risk(line: str) -> tuple[str, str] | None:
 
 
 def classify_urgency(line: str) -> tuple[str, str] | None:
-    lower = line.lower()
+    lower = normalize_for_match(line)
     if any(token in lower for token in ["natychmiast", "krytycz", "pilne", "urgent", "critical", "immediate"]):
         return (tr("urgency_high"), Style.red)
     if any(token in lower for token in ["monitor", "observe"]):
@@ -215,7 +221,7 @@ def classify_urgency(line: str) -> tuple[str, str] | None:
 
 def build_report_panels(report: str, current_lang: str) -> list[str]:
     sections: list[tuple[str, list[str]]] = []
-    current_title = "Summary"
+    current_title = tr("report_title")
     current_lines: list[str] = []
     for raw_line in report.splitlines():
         line = raw_line.strip()
@@ -223,10 +229,14 @@ def build_report_panels(report: str, current_lang: str) -> list[str]:
             if current_lines and current_lines[-1] != "":
                 current_lines.append("")
             continue
-        if re.match(r"^\d+\.\s", line):
+        if re.fullmatch(r"[-*_]{3,}", line):
+            continue
+        line = line.replace("**", "")
+        heading = re.sub(r"^#{1,6}\s*", "", line)
+        if re.match(r"^\d+\.\s", heading):
             if current_lines:
                 sections.append((current_title, current_lines))
-            current_title = re.sub(r"^\d+\.\s*", "", line)
+            current_title = re.sub(r"^\d+\.\s*", "", heading)
             current_lines = []
             continue
         if line.startswith(("- ", "* ")):
