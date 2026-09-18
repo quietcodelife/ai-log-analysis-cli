@@ -34,7 +34,7 @@ CLI do analizy logow serwerowych Linux przy pomocy AI. Projekt laczy szybka loka
 ## Quick Start
 
 ```bash
-git clone https://github.com/<your-username>/AI_Log_Analysis_CLI.git
+git clone https://github.com/quietcodelife/ai-log-analysis-cli.git
 cd AI_Log_Analysis_CLI
 cp .env.example .env
 cp log-sources.example.json log-sources.json
